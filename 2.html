@@ -3,15 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Stagecoach Demo</title>
-
     <style>
         :root {
             --stagecoach-blue: #003b70;
             --stagecoach-orange: #f58220;
             --light-grey: #f4f5f7;
             --border-grey: #cccccc;
-            --text-dark: #222222;
         }
 
         * {
@@ -21,9 +18,9 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
+            padding: 0;
             min-height: 100vh;
             background: var(--light-grey);
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -35,134 +32,84 @@
             padding: 25px;
         }
 
-        /* Stagecoach-style header */
         .brand {
             background: var(--stagecoach-blue);
             color: white;
             text-align: center;
-            padding: 22px;
-            border-radius: 8px 8px 0 0;
+            padding: 20px;
+            border-radius: 7px 7px 0 0;
         }
 
         .brand-name {
             font-size: 32px;
             font-weight: bold;
-            letter-spacing: -1px;
         }
 
         .orange-line {
             width: 60px;
             height: 5px;
             background: var(--stagecoach-orange);
-            margin: 9px auto 0;
+            margin: 8px auto 0;
             border-radius: 3px;
         }
 
-        /* Form */
         .form {
             background: white;
-            padding: 28px;
-            border-radius: 0 0 8px 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            padding: 25px;
+            border-radius: 0 0 7px 7px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
             text-align: center;
             color: var(--stagecoach-blue);
-            font-size: 25px;
+            font-size: 24px;
             margin: 0 0 8px;
         }
 
         .subtitle {
             text-align: center;
             color: #666;
-            font-size: 14px;
-            margin: 0 0 25px;
+            margin-bottom: 25px;
         }
 
-        label {
-            display: block;
-            color: var(--text-dark);
-            font-size: 14px;
-            font-weight: bold;
-            margin: 14px 0 6px;
-        }
-
-        input {
+        input[type="text"],
+        input[type="password"] {
             width: 100%;
-            padding: 13px 12px;
+            padding: 12px 10px;
+            margin: 8px 0;
             border: 1px solid var(--border-grey);
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 16px;
         }
 
         input:focus {
             outline: none;
             border-color: var(--stagecoach-orange);
-            box-shadow: 0 0 0 2px rgba(245, 130, 32, 0.15);
         }
 
-        button {
+        button[type="submit"] {
             width: 100%;
-            background: var(--stagecoach-orange);
+            background-color: var(--stagecoach-orange);
             color: white;
             padding: 14px 20px;
-            margin-top: 22px;
+            margin: 15px 0 8px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
         }
 
-        button:hover {
-            background: #d96f16;
-        }
-
-        .links {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .links a {
-            color: var(--stagecoach-blue);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
+        button[type="submit"]:hover {
+            background-color: #d96f16;
         }
 
         .demo-note {
-            margin-top: 20px;
-            padding: 10px;
-            background: #f0f4f8;
-            border-radius: 4px;
-            color: #666;
+            text-align: center;
+            color: #777;
             font-size: 12px;
-            text-align: center;
-        }
-
-        #message {
-            display: none;
             margin-top: 15px;
-            padding: 12px;
-            background: #e8f5e9;
-            color: #246b2a;
-            border-radius: 4px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-            }
-
-            .form {
-                padding: 22px;
-            }
         }
     </style>
 </head>
@@ -177,39 +124,30 @@
         </div>
 
         <form
+            action="#"
+            method="get"
             class="form"
-            id="demoForm"
-            onsubmit="return demoSubmit(event)"
+            onsubmit="event.preventDefault();"
         >
 
             <h1>Welcome</h1>
 
             <p class="subtitle">
-                Sign in to your account
+                Sign in to your Stagecoach account
             </p>
 
-            <label for="email">
-                Email address
-            </label>
-
             <input
-                id="email"
                 name="email"
-                type="email"
-                placeholder="Enter your email"
+                type="text"
+                placeholder="Email address"
                 autocomplete="off"
                 required
             >
 
-            <label for="password">
-                Password
-            </label>
-
             <input
-                id="password"
                 name="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Password"
                 autocomplete="off"
                 required
             >
@@ -218,14 +156,6 @@
                 Continue
             </button>
 
-            <div class="links">
-                <a href="#">Forgotten password?</a>
-            </div>
-
-            <div id="message">
-                Demo submission received. No credentials were transmitted or stored.
-            </div>
-
             <div class="demo-note">
                 Demo interface — credentials are not transmitted or stored.
             </div>
@@ -233,20 +163,6 @@
         </form>
 
     </div>
-
-    <script>
-        function demoSubmit(event) {
-            event.preventDefault();
-
-            // Demo only:
-            // The email and password are deliberately NOT
-            // sent to a server or stored anywhere.
-
-            document.getElementById("message").style.display = "block";
-
-            return false;
-        }
-    </script>
 
 </body>
 </html>
