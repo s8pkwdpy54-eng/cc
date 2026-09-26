@@ -35,6 +35,7 @@
             padding: 25px;
         }
 
+        /* Stagecoach-style header */
         .brand {
             background: var(--stagecoach-blue);
             color: white;
@@ -46,6 +47,7 @@
         .brand-name {
             font-size: 32px;
             font-weight: bold;
+            letter-spacing: -1px;
         }
 
         .orange-line {
@@ -56,6 +58,7 @@
             border-radius: 3px;
         }
 
+        /* Form */
         .form {
             background: white;
             padding: 28px;
@@ -96,6 +99,7 @@
         input:focus {
             outline: none;
             border-color: var(--stagecoach-orange);
+            box-shadow: 0 0 0 2px rgba(245, 130, 32, 0.15);
         }
 
         button {
@@ -115,14 +119,50 @@
             background: #d96f16;
         }
 
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: var(--stagecoach-blue);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
         .demo-note {
-            margin-top: 18px;
+            margin-top: 20px;
             padding: 10px;
             background: #f0f4f8;
             border-radius: 4px;
             color: #666;
             font-size: 12px;
             text-align: center;
+        }
+
+        #message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #e8f5e9;
+            color: #246b2a;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .form {
+                padding: 22px;
+            }
         }
     </style>
 </head>
@@ -136,64 +176,77 @@
             <div class="orange-line"></div>
         </div>
 
-        <!--
-            Demo endpoint only.
-
-            This sends test_email and test_value to your
-            own /test-submit endpoint.
-
-            Do not put real passwords or other credentials
-            into test_value.
-        -->
         <form
             class="form"
-            action="/test-submit"
-            method="post"
+            id="demoForm"
+            onsubmit="return demoSubmit(event)"
         >
 
             <h1>Welcome</h1>
 
             <p class="subtitle">
-                Stagecoach-style demonstration
+                Sign in to your account
             </p>
 
             <label for="email">
-                Test email
+                Email address
             </label>
 
             <input
                 id="email"
-                name="test_email"
+                name="email"
                 type="email"
-                placeholder="test@example.com"
+                placeholder="Enter your email"
                 autocomplete="off"
                 required
             >
 
-            <label for="test-value">
-                Test value
+            <label for="password">
+                Password
             </label>
 
             <input
-                id="test-value"
-                name="test_value"
-                type="text"
-                placeholder="Demo value"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
                 autocomplete="off"
                 required
             >
 
             <button type="submit">
-                Send Test
+                Continue
             </button>
 
+            <div class="links">
+                <a href="#">Forgotten password?</a>
+            </div>
+
+            <div id="message">
+                Demo submission received. No credentials were transmitted or stored.
+            </div>
+
             <div class="demo-note">
-                Local testing only. No real credentials should be entered.
+                Demo interface — credentials are not transmitted or stored.
             </div>
 
         </form>
 
     </div>
+
+    <script>
+        function demoSubmit(event) {
+            event.preventDefault();
+
+            // Demo only:
+            // The email and password are deliberately NOT
+            // sent to a server or stored anywhere.
+
+            document.getElementById("message").style.display = "block";
+
+            return false;
+        }
+    </script>
 
 </body>
 </html>
