@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --stagecoach-blue: #003b70;
+            --stagecoach-orange: #f58220;
+            --light-grey: #f4f5f7;
+            --border-grey: #cccccc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--light-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+        }
+
+        .brand {
+            background: var(--stagecoach-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 7px 7px 0 0;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .orange-line {
+            width: 60px;
+            height: 5px;
+            background: var(--stagecoach-orange);
+            margin: 8px auto 0;
+            border-radius: 3px;
+        }
+
+        .form {
+            background: white;
+            padding: 25px;
+            border-radius: 0 0 7px 7px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--stagecoach-blue);
+            font-size: 24px;
+            margin: 0 0 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--stagecoach-orange);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: var(--stagecoach-orange);
+            color: white;
+            padding: 14px 20px;
+            margin: 15px 0 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #d96f16;
+        }
+
+        .demo-note {
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="brand">
+            <div class="brand-name">Stagecoach</div>
+            <div class="orange-line"></div>
+        </div>
+
+        <form action="#" method="get" class="form">
+
+            <h1>Welcome</h1>
+
+            <p class="subtitle">
+                Sign in to your Stagecoach account
+            </p>
+
+            <input
+                name="email"
+                type="text"
+                placeholder="Email address"
+                required
+            >
+
+            <button type="submit">
+                Continue
+            </button>
+
+            <div class="demo-note">
+                Demo interface — no password is collected.
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
