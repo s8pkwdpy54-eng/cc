@@ -68,24 +68,23 @@
     <div class="container">
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" width="260" height="65">
-                <!-- Full multi-colour Stagecoach swirl (no white) -->
-                <!-- Blue base -->
-                <circle cx="35" cy="35" r="32" fill="#0077C8"/>
+                <!-- Base green circle -->
+                <circle cx="35" cy="35" r="32" fill="#009B77"/>
                 
-                <!-- Green section -->
+                <!-- Orange section (extended into the centre to remove white) -->
                 <path d="M35 3 
-                         A32 32 0 0 1 62 48 
-                         L35 35 Z" fill="#009B77"/>
-                
-                <!-- Orange/Yellow filling the previous white area -->
-                <path d="M62 48 
-                         A32 32 0 0 1 8 48 
+                         A32 32 0 0 1 62.7 51 
                          L35 35 Z" fill="#FFA400"/>
                 
-                <!-- Extra orange to cover center white -->
+                <!-- Blue section -->
+                <path d="M62.7 51 
+                         A32 32 0 0 1 7.3 51 
+                         L35 35 Z" fill="#0077C8"/>
+                
+                <!-- Extra orange to fully cover any remaining white in the middle -->
                 <path d="M35 35 
-                         L62 48 
-                         A20 20 0 0 0 8 48 
+                         L50 20 
+                         A18 18 0 0 1 20 50 
                          Z" fill="#FFA400"/>
                 
                 <!-- Stagecoach text -->
