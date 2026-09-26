@@ -61,20 +61,26 @@
         .logo svg {
             width: 260px;
             height: auto;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" width="260" height="65">
-                <!-- Iconic Stagecoach circle (Green / Orange / Blue) -->
-                <circle cx="35" cy="35" r="32" fill="#009B77"/>          <!-- Green base -->
-                <path d="M35 3 A32 32 0 0 1 67 35 L35 35 Z" fill="#FFA400"/> <!-- Orange -->
-                <path d="M67 35 A32 32 0 0 1 35 67 L35 35 Z" fill="#0077C8"/> <!-- Blue -->
-                
-                <!-- Stagecoach text -->
-                <text x="80" y="46" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="900" fill="#051C2C">Stagecoach</text>
+            <!-- Stagecoach Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60">
+                <g id="Emblem">
+                    <!-- Outer Dark Blue Disc Background -->
+                    <circle cx="30" cy="30" r="28" fill="#002244" />
+                    <!-- Inner Swirl Loops (Amber, Teal, Blue) -->
+                    <path d="M 30,8 A 22,22 0 1,1 12,42 A 16,16 0 1,0 30,14 Z" fill="#F2A900" />
+                    <path d="M 28,12 A 18,18 0 1,1 14,38 A 12,12 0 1,0 28,18 Z" fill="#00A3A6" />
+                    <path d="M 26,16 A 14,14 0 1,1 16,34 A 8,8 0 1,0 26,22 Z" fill="#0072CE" />
+                </g>
+                <g id="Wordmark">
+                    <text x="70" y="40" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="33" fill="#002244" letter-spacing="-1">Stagecoach</text>
+                </g>
             </svg>
         </div>
 
